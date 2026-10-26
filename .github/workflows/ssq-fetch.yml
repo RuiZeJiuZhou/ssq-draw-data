@@ -1,7 +1,6 @@
 name: 抓取双色球最新开奖
 on:
-  push:
-    paths: ['trigger.txt']
+  workflow_dispatch:
   schedule:
     - cron: '35 13 * * 2,4,0'
     - cron: '05 14 * * 2,4,0'
