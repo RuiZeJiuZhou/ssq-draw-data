@@ -1,15 +1,19 @@
 name: 抓取双色球最新开奖
+# 说明：GitHub 服务器访问福彩官网会被网宿 WAF 拦截（实测 403），
+# 因此开奖当晚能否抓到取决于备用源是否可用；抓不到时静默跳过，不产生提交。
 on:
-  workflow_dispatch:
+  push:
+    paths: ['trigger.txt']
   schedule:
-    - cron: '35 13 * * 2,4,0'
-    - cron: '05 14 * * 2,4,0'
-    - cron: '35 14 * * 2,4,0'
-    - cron: '05 15 * * 2,4,0'
+    # 开奖日（UTC 周二/四/日）= 北京周二/四/日，21:00-23:45 每 15 分钟
+    - cron: '0,15,30,45 13-15 * * 2,4,0'
+    # 凌晨兜底：北京 01:00-03:30，第三方镜像通常此时已入库
+    - cron: '0,30 17-19 * * 2,4,0'
   workflow_dispatch:
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     permissions:
       contents: write
     steps:
