@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-26T05:38:07.161Z",
+  "out": [
+    {
+      "id": "A 福彩官网JSON",
+      "status": 403,
+      "ms": 1104,
+      "len": 88,
+      "issues": [],
+      "head": "网宿云安全平台检测到您当前的访问行为存在异常，请稍后重试... "
+    },
+    {
+      "id": "B 福彩官网JSON(无Referer)",
+      "status": 403,
+      "ms": 6,
+      "len": 88,
+      "issues": [],
+      "head": "网宿云安全平台检测到您当前的访问行为存在异常，请稍后重试... "
+    },
+    {
+      "id": "C 500历史表",
+      "status": 200,
+      "ms": 1524,
+      "len": 3925,
+      "issues": [],
+      "head": " <div id=\"container\"> <div class=\"warp\"> <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"> <tr> <td> <div class=\"wrap_datacha"
+    },
+    {
+      "id": "D 500开奖页",
+      "status": 200,
+      "ms": 2566,
+      "len": 984,
+      "issues": [],
+      "head": "<script>function a(a){function n(){for(var a={wQzOV:_0x649a(\"0x4\"),iTyzs:function(a,n){return a+n}},n=a[_0x649a(\"0x5\")][_0x649a(\"0x6\")](\"|\"),e=0;;){sw"
+    },
+    {
+      "id": "E 中彩网开奖",
+      "status": 200,
+      "ms": 1929,
+      "len": 15567,
+      "issues": [],
+      "head": " <!DOCTYPE html> <html lang=\"zh-CN\"> <head> <meta charset=\"UTF-8\"/> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/> <meta name=\"keywords\" conte"
+    },
+    {
+      "id": "F 网易彩票",
+      "err": "fetch failed"
+    },
+    {
+      "id": "G 福彩官网HTML",
+      "status": 403,
+      "ms": 404,
+      "len": 88,
+      "issues": [],
+      "head": "网宿云安全平台检测到您当前的访问行为存在异常，请稍后重试... "
+    },
+    {
+      "id": "H 新浪彩票",
+      "status": 404,
+      "ms": 973,
+      "len": 1829,
+      "issues": [],
+      "head": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> <html xmlns=\"http://www.w3.o"
+    }
+  ]
+}
