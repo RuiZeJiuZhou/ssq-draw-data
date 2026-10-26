@@ -1,0 +1,26 @@
+name: 抓取双色球最新开奖
+on:
+  schedule:
+    - cron: '35 13 * * 2,4,0'    # 北京时间 21:35（周二/四/日）
+    - cron: '05 14 * * 2,4,0'    # 22:05
+    - cron: '35 14 * * 2,4,0'    # 22:35
+    - cron: '05 15 * * 2,4,0'    # 23:05
+  workflow_dispatch:
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/fetch.mjs
+      - name: 提交变更
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/latest.json
+          git diff --staged --quiet || git commit -m "chore: ssq $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
